@@ -1,0 +1,1597 @@
+:root {
+  --midnight: #26385F;
+  --deep-navy: #304573;
+  --electric-blue: #3569C8;
+  --sky-glow: #8DB0E8;
+  --royal-blue: #4778D8;
+  --crimson: #CC3B56;
+  --crimson-glow: #FFA0B1;
+  --dark-crimson: #B82F49;
+  --cloud: #EEF3FF;
+  --pure-white: #F5F8FF;
+  --paper-white: #FFFFFF;
+  --text-dark: #102448;
+  --surface-primary: #2C416D;
+  --surface-secondary: #354C7A;
+  --surface-card: #3E588B;
+  --surface-hover: #4D689C;
+  --wine: #93314C;
+  --blue-hover: #2858AE;
+  --midnight-rgb: 38 56 95;
+  --deep-navy-rgb: 48 69 115;
+  --electric-blue-rgb: 53 105 200;
+  --sky-glow-rgb: 141 176 232;
+  --crimson-rgb: 204 59 86;
+  --cloud-rgb: 238 243 255;
+  --landing-blue: #2563EB;
+  --landing-royal-blue: #1D4ED8;
+  --landing-red: #DC2626;
+  --landing-soft-red: #EF4444;
+  --landing-blue-rgb: 37 99 235;
+  --landing-red-rgb: 220 38 38;
+  --landing-blue-orb: rgb(var(--landing-blue-rgb) / 24%);
+  --landing-red-orb: rgb(var(--landing-red-rgb) / 20%);
+  --landing-geometry: rgb(var(--cloud-rgb) / 3%);
+  --landing-gradient: linear-gradient(
+    135deg,
+    var(--landing-blue) 0%,
+    var(--landing-royal-blue) 45%,
+    var(--landing-red) 75%,
+    var(--landing-soft-red) 100%
+  );
+  --landing-shade: 78%;
+  --blue-glow: 0 0 10px rgb(141 176 232 / 25%), 0 0 25px rgb(53 105 200 / 20%);
+  --red-glow: 0 0 10px rgb(204 59 86 / 20%), 0 0 25px rgb(204 59 86 / 15%);
+  --card-shadow: 0 8px 30px rgb(0 0 0 / 22%);
+  --sh-green: var(--electric-blue);
+  --sh-green-dark: var(--dark-crimson);
+  --sh-blue: var(--sky-glow);
+  --sh-blue-dark: var(--electric-blue);
+  --sh-white: var(--pure-white);
+  --sh-background: var(--surface-primary);
+  --sh-text: var(--cloud);
+  --sh-muted: rgb(var(--cloud-rgb) / 68%);
+  --sh-border: rgb(var(--sky-glow-rgb) / 25%);
+  --sh-success: var(--electric-blue);
+  --sh-error: var(--crimson);
+}
+
+/* Landing page */
+.lp-wrapper {
+  --lp-color-navy: var(--sh-blue-dark);
+  --lp-color-navy-light: var(--sh-blue);
+  --lp-color-gold: var(--sh-green);
+  --lp-color-gold-hover: var(--sh-green-dark);
+  --lp-color-beige: var(--sh-background);
+  --lp-color-white: var(--sh-white);
+  --lp-color-text: var(--sh-text);
+  --lp-color-text-muted: var(--sh-muted);
+  --lp-radius-sm: 4px;
+  --lp-radius-md: 8px;
+  --lp-radius-lg: 12px;
+  --lp-shadow-sm: 0 2px 8px rgb(23 25 35 / 5%);
+  --lp-shadow-md: 0 5px 14px rgb(23 25 35 / 8%);
+  --lp-shadow-lg: 0 10px 24px rgb(23 25 35 / 10%);
+}
+
+.lp-header {
+  background-  color: var(--white);
+  background: var(--electric-blue);
+}
+
+.auth-choice button[aria-selected="true"]:hover {
+  background: var(--blue-hover);
+  box-shadow: 0 1px 0 rgb(255 255 255 / 12%);
+}
+
+.lp-header.lp-scrolled {
+  background-color: var(--sh-blue-dark);
+  box-shadow: 0 1px 0 rgb(255 255 255 / 12%);
+}
+
+.lp-logo,
+.lp-header.lp-scrolled .lp-logo,
+.lp-nav-link,
+.lp-header.lp-scrolled .lp-nav-link,
+.lp-header.lp-scrolled .lp-nav-link[aria-current="page"],
+.lp-btn-text {
+  color: var(--sh-white);
+}
+
+.lp-nav-link:hover,
+.lp-header.lp-scrolled .lp-nav-link:hover {
+  color: #34d399;
+}
+
+.lp-stats {
+  padding: clamp(1.5rem, 3vw, 2.25rem) 0;
+  background: var(--sh-blue-dark);
+}
+
+.lp-stats-grid {
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+.lp-stat-item {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 126px;
+  gap: 0.35rem;
+  padding: 1rem 1.25rem;
+  overflow: hidden;
+  background: linear-gradient(145deg, rgb(255 255 255 / 10%), rgb(255 255 255 / 5%));
+  border: 1px solid rgb(255 255 255 / 18%);
+  border-radius: 12px;
+  box-shadow: inset 0 1px rgb(255 255 255 / 7%), 0 8px 20px rgb(7 19 35 / 10%);
+  text-align: center;
+}
+
+.lp-stat-item::before {
+  position: absolute;
+  top: 0;
+  right: 1.25rem;
+  left: 1.25rem;
+  height: 2px;
+  background: var(--sh-green);
+  border-radius: 0 0 2px 2px;
+  content: "";
+}
+
+.lp-stat-kicker {
+  color: #dbeafe;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1.4;
+}
+
+.lp-stat-kicker span {
+  margin: 0 0.2rem;
+  color: var(--sh-white);
+}
+
+.lp-stat-number {
+  color: var(--sh-green);
+  font-family: inherit;
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.lp-stat-label {
+  color: var(--sh-white);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.lp-btn-primary {
+  color: var(--sh-white);
+  background-color: var(--sh-blue-dark);
+}
+
+.lp-btn-primary:hover {
+  background-color: #2563eb;
+}
+
+.lp-btn-outline {
+  border-color: var(--sh-blue-dark);
+  color: var(--sh-blue-dark);
+}
+
+.lp-btn-outline:hover {
+  color: var(--sh-blue-dark);
+  background-color: #eff6ff;
+}
+
+.lp-hero .lp-btn-primary {
+  color: var(--sh-white);
+  background-color: var(--sh-green);
+}
+
+.lp-hero .lp-btn-primary:hover {
+  background-color: var(--sh-green-dark);
+}
+
+.lp-nav-link[aria-current="page"] {
+  text-decoration-color: var(--sh-green);
+}
+
+.lp-hero-overlay {
+  background: linear-gradient(135deg, #1e40af, #10b981);
+}
+
+.lp-search-panel,
+.lp-property-card,
+.lp-step-card,
+.lp-about-card,
+.lp-faq-item {
+  border: 1px solid var(--sh-border);
+  box-shadow: var(--lp-shadow-sm);
+}
+
+.lp-input-group input:focus,
+.lp-input-group select:focus {
+  border-color: var(--sh-blue);
+}
+
+.lp-input-group input:focus-visible,
+.lp-input-group select:focus-visible,
+.lp-wrapper a:focus-visible,
+.lp-wrapper button:focus-visible {
+  outline: 3px solid rgb(37 99 235 / 34%);
+  outline-offset: 3px;
+}
+
+/* Property portal */
+.portal-page {
+  color: var(--sh-text);
+  background: var(--sh-background);
+}
+
+.portal-page::before {
+  background:
+    radial-gradient(ellipse at 100% 0%, rgb(37 99 235 / 7%), transparent 34%),
+    radial-gradient(ellipse at 0% 100%, rgb(16 185 129 / 6%), transparent 32%),
+    var(--sh-background);
+}
+
+.portal-shell {
+  background: var(--sh-white);
+  border-color: var(--sh-border);
+  border-radius: 12px;
+  box-shadow: 0 12px 36px rgb(23 25 35 / 8%);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.portal-header {
+  background: var(--sh-blue-dark);
+  border-bottom-color: rgb(255 255 255 / 14%);
+}
+
+.portal-header .brand-header {
+  color: var(--sh-white);
+}
+
+.brand-mark {
+  color: var(--sh-white);
+  background: var(--sh-blue-dark);
+  border-radius: 6px;
+}
+
+.brand-mark.brand-emblem-plate {
+  width: 64px;
+  height: 64px;
+  flex: 0 0 auto;
+  padding: 5px;
+  border: 1px solid rgb(22 58 112 / 12%);
+  border-radius: 15px;
+  background: var(--sh-white);
+  box-shadow: 0 4px 12px rgb(7 19 35 / 18%);
+}
+
+.brand-emblem {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.mobile-brand .brand-mark.brand-emblem-plate {
+  width: 54px;
+  height: 54px;
+}
+
+.portal-header .brand-mark.brand-emblem-plate {
+  width: 66px;
+  height: 66px;
+}
+
+.settings-panel,
+.property-card-lg {
+  border-color: var(--sh-border);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgb(23 25 35 / 5%);
+}
+
+.listing-price {
+  color: var(--sh-blue-dark);
+}
+
+.card-details .eyebrow {
+  color: var(--sh-green-dark);
+}
+
+.settings-nav {
+  background: var(--sh-background);
+  border-right-color: var(--sh-border);
+}
+
+.settings-nav-item:hover,
+.settings-nav-item.is-active {
+  color: var(--sh-blue-dark);
+  background: #edf3ff;
+}
+
+.settings-view a,
+.portal-content .eyebrow {
+  color: var(--sh-blue);
+}
+
+.portal-actions > .portal-sign-in {
+  color: var(--sh-white);
+  background: rgb(255 255 255 / 10%);
+  border-color: rgb(255 255 255 / 26%);
+}
+
+.portal-actions > .portal-sign-in:hover {
+  color: var(--sh-white);
+  background: rgb(16 185 129 / 28%);
+  border-color: var(--sh-green);
+}
+
+.portal-actions .settings-toggle,
+.submit-button,
+.action-btn:not(.secondary),
+.submit-request {
+  color: var(--sh-white);
+  background: var(--sh-blue-dark);
+  border-color: var(--sh-blue-dark);
+}
+
+.portal-actions .settings-toggle:hover,
+.submit-button:hover,
+.action-btn:not(.secondary):hover,
+.submit-request:hover {
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+.portal-actions .settings-toggle {
+  background: var(--sh-green);
+  border-color: var(--sh-green);
+}
+
+.portal-actions .settings-toggle:hover {
+  background: var(--sh-green-dark);
+  border-color: var(--sh-green-dark);
+}
+
+.action-btn.secondary {
+  color: var(--sh-blue-dark);
+  background: var(--sh-white);
+  border-color: #c8d7f5;
+}
+
+.property-tour-guide {
+  color: var(--sh-blue-dark);
+  background: #eff4ff;
+  border-color: #c8d7f5;
+}
+
+.property-tour-guide:hover {
+  color: var(--sh-white);
+  background: var(--sh-blue-dark);
+  border-color: var(--sh-blue-dark);
+}
+
+.action-btn.secondary:hover {
+  color: var(--sh-blue-dark);
+  background: #eff4ff;
+  border-color: var(--sh-blue);
+}
+
+.catalog-notice {
+  color: var(--sh-blue-dark);
+  background: #eff4ff;
+  border-color: #d6e2ff;
+}
+
+.property-tour {
+  background: var(--sh-background);
+  border-color: var(--sh-border);
+}
+
+.property-tour-heading h3,
+.property-tour-badge,
+.property-tour-credit a {
+  color: var(--sh-blue-dark);
+}
+
+.property-tour-badge {
+  background: #eff4ff;
+}
+
+.close-button,
+.property-dialog {
+  border-color: var(--sh-border);
+  border-radius: 8px;
+}
+
+.portal-shell :focus-visible {
+  outline: 3px solid rgb(var(--sky-glow-rgb) / 60%);
+  outline-offset: 2px;
+}
+
+body[data-theme="dark"] .portal-shell {
+  color: var(--cloud);
+  background: var(--surface-primary);
+  border-color: rgb(var(--sky-glow-rgb) / 25%);
+}
+
+.portal-page[data-theme="dark"] {
+  color: var(--cloud);
+  background: var(--midnight);
+}
+
+.portal-page[data-theme="dark"]::before {
+  background:
+    radial-gradient(ellipse at 100% 0%, rgb(var(--sky-glow-rgb) / 18%), transparent 34%),
+    radial-gradient(ellipse at 0% 100%, rgb(var(--crimson-rgb) / 14%), transparent 32%),
+    var(--midnight);
+}
+
+body[data-theme="dark"] .portal-header {
+  background: var(--surface-secondary);
+  border-bottom-color: rgb(var(--sky-glow-rgb) / 25%);
+}
+
+body[data-theme="dark"] .brand-header,
+body[data-theme="dark"] .portal-heading h2,
+body[data-theme="dark"] .card-details h3 {
+  color: var(--cloud);
+}
+
+body[data-theme="dark"] .property-card-lg,
+body[data-theme="dark"] .settings-panel {
+  color: var(--cloud);
+  background: var(--surface-card);
+  border-color: rgb(var(--sky-glow-rgb) / 25%);
+}
+
+body[data-theme="dark"] .listing-price {
+  color: var(--sky-glow);
+}
+
+body[data-theme="dark"] .settings-nav {
+  background: var(--surface-primary);
+  border-right-color: rgb(var(--sky-glow-rgb) / 25%);
+}
+
+body[data-theme="dark"] .settings-content,
+body[data-theme="dark"] .settings-view h2,
+body[data-theme="dark"] .settings-details dd {
+  color: var(--cloud);
+}
+
+body[data-theme="dark"] .settings-nav-item {
+  color: rgb(var(--cloud-rgb) / 82%);
+}
+
+body[data-theme="dark"] .settings-view p,
+body[data-theme="dark"] .settings-details dt {
+  color: rgb(var(--cloud-rgb) / 72%);
+}
+
+body[data-theme="dark"] .property-dialog {
+  color: var(--cloud);
+  background: var(--surface-primary);
+  border-color: rgb(var(--sky-glow-rgb) / 25%);
+}
+
+body[data-theme="dark"] .settings-nav-item:hover,
+body[data-theme="dark"] .settings-nav-item.is-active {
+  color: var(--cloud);
+  background: rgb(var(--electric-blue-rgb) / 20%);
+}
+
+body[data-theme="dark"] .action-btn.secondary,
+body[data-theme="dark"] .property-tour-guide {
+  color: var(--sky-glow);
+  background: var(--surface-primary);
+  border-color: rgb(var(--sky-glow-rgb) / 35%);
+}
+
+body[data-theme="dark"] .action-btn.secondary:hover,
+body[data-theme="dark"] .property-tour-guide:hover {
+  background: var(--surface-hover);
+}
+
+/* Tenant dashboard */
+:root {
+  --ink: var(--sh-text);
+  --muted: var(--sh-muted);
+  --green: var(--sh-green);
+  --green-dark: var(--sh-green-dark);
+  --green-light: #ecfdf5;
+  --gold: var(--sh-green);
+  --canvas: var(--sh-background);
+  --white: var(--sh-white);
+  --line: var(--sh-border);
+  --shadow: 0 2px 10px rgb(23 25 35 / 5%);
+}
+
+.sidebar {
+  color: var(--sh-white);
+  background: var(--sh-blue-dark);
+}
+
+.brand-mark {
+  color: var(--sh-white);
+  background: var(--sh-blue-dark);
+  border-color: rgb(255 255 255 / 25%);
+  border-radius: 6px;
+}
+
+.brand-caption,
+.help-card p {
+  color: #d4e0f5;
+}
+
+.nav-label,
+.sidebar-footer {
+  color: #a9c0e4;
+}
+
+.help-card a {
+  color: #34d399;
+}
+
+.topbar {
+  background: rgb(255 255 255 / 96%);
+  backdrop-filter: blur(8px);
+}
+
+.summary-card,
+.panel {
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.overview-lease,
+.overview-payments,
+.overview-maintenance,
+.overview-activity {
+  --card-accent: var(--sh-blue);
+  --card-halo: #dce8ff;
+  --card-halo-soft: #f2f6ff;
+}
+
+.overview-payments,
+.overview-activity {
+  --card-accent: var(--sh-green);
+  --card-halo: #d1fae5;
+  --card-halo-soft: #f0fdf4;
+}
+
+.summary-note.emphasis {
+  color: var(--sh-blue);
+}
+
+.overview-card:focus-visible,
+.content :focus-visible {
+  outline: 3px solid rgb(37 99 235 / 36%);
+  outline-offset: 2px;
+}
+
+.avatar,
+.summary-icon,
+.activity-mark,
+.payment-method-icon {
+  color: var(--sh-blue-dark);
+  background: #eff4ff;
+}
+
+.request-button {
+  color: var(--sh-blue-dark);
+  background: #eff4ff;
+  border-color: #d6e2ff;
+}
+
+.request-button:hover {
+  background: #e3edff;
+  border-color: var(--sh-blue);
+}
+
+.rent-card {
+  color: var(--sh-white);
+  background: var(--sh-blue-dark);
+  border-color: var(--sh-blue-dark);
+  box-shadow: none;
+}
+
+.rent-card .eyebrow {
+  color: #dbeafe;
+}
+
+.rent-card .rent-due,
+.rent-card .rent-card-foot {
+  color: #dbeafe;
+}
+
+.rent-card .rent-action {
+  color: var(--sh-blue-dark);
+}
+
+.rent-card .paid-dot {
+  background: var(--sh-success);
+}
+
+.text-link,
+.lease-status,
+.status-pill.completed {
+  color: var(--sh-blue);
+}
+
+.lease-status::before {
+  background: var(--sh-success);
+}
+
+.status-pill.completed {
+  background: #ecfdf3;
+}
+
+.request-icon,
+.payment-method-icon {
+  color: var(--sh-blue-dark);
+  background: #eff4ff;
+}
+
+.payment-insight {
+  background: #eff4ff;
+  border-color: #d6e2ff;
+}
+
+.payment-insight strong {
+  color: var(--sh-blue-dark);
+}
+
+.payment-insight p {
+  color: #52627a;
+}
+
+.submit-request {
+  color: var(--sh-white);
+  background: var(--sh-green);
+  border-color: var(--sh-green);
+}
+
+.submit-request:hover {
+  background: var(--sh-green-dark);
+}
+
+.lease-status-badge,
+.payment-history-status,
+.payment-status:not(.pending),
+.form-message[data-state="success"] {
+  color: var(--sh-success);
+}
+
+.lease-status-badge,
+.payment-status:not(.pending) {
+  background: #ecfdf3;
+}
+
+/* Login panel */
+.login-shell {
+  border-color: rgb(var(--electric-blue-rgb) / 20%);
+  border-radius: 12px;
+  box-shadow: 0 16px 48px rgb(var(--midnight-rgb) / 16%);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.brand-panel {
+  background: var(--hero-gradient);
+  background-position: center;
+  background-size: auto;
+  transition: background-position 180ms ease-out;
+  touch-action: pan-y;
+}
+
+.brand-panel::after {
+  height: 46%;
+  background: none;
+}
+
+.login-shell .brand-mark {
+  color: var(--midnight);
+  background: var(--cloud);
+  border-radius: 6px;
+}
+
+.login-shell .brand-mark.brand-emblem-plate {
+  border-radius: 15px;
+  background: var(--cloud);
+}
+
+.brand-copy h1 span {
+  color: var(--sky-glow);
+  font-style: italic;
+  text-shadow: 0 1px 8px rgb(var(--midnight-rgb) / 55%);
+}
+
+.brand-panel .eyebrow {
+  color: var(--sky-glow);
+  text-shadow: 0 1px 6px rgb(var(--midnight-rgb) / 80%);
+}
+
+.property-icon {
+  color: var(--cloud);
+  background: rgb(var(--electric-blue-rgb) / 28%);
+  border-radius: 6px;
+}
+
+.form-panel {
+  background: var(--hero-gradient);
+}
+
+.form-heading .eyebrow {
+  color: var(--sky-glow);
+}
+
+.form-heading h2 {
+  color: var(--body-text);
+}
+
+.auth-choice {
+  background: var(--cloud);
+  border-color: rgb(var(--electric-blue-rgb) / 20%);
+  border-radius: 6px;
+}
+
+.auth-choice button[aria-selected="true"] {
+  color: var(--white);
+  background: var(--electric-blue);
+}
+
+.auth-choice button[aria-selected="true"]:hover {
+  background: var(--blue-hover);
+}
+
+.auth-choice button:focus-visible,
+.password-toggle:focus-visible {
+  outline-color: var(--sky-glow);
+}
+
+.field input:focus {
+  border-color: var(--sky-glow);
+  box-shadow: 0 0 0 3px rgb(var(--sky-glow-rgb) / 14%);
+}
+
+.password-toggle:hover {
+  color: var(--electric-blue);
+  background: rgb(var(--electric-blue-rgb) / 8%);
+}
+
+.remember-option input:checked + .switch-track {
+  background: var(--electric-blue);
+}
+
+.text-link {
+  color: var(--electric-blue);
+}
+
+.form-panel .submit-button {
+  color: var(--white);
+  background: var(--crimson);
+  border-color: var(--crimson);
+}
+
+.form-panel .submit-button:hover {
+  background: var(--crimson-hover);
+}
+
+.form-panel .submit-button:focus-visible {
+  outline-color: rgb(var(--sky-glow-rgb) / 32%);
+}
+
+.status-message[data-state="success"] {
+  color: var(--electric-blue);
+}
+
+.ai-note {
+  background: rgb(var(--electric-blue-rgb) / 5%);
+  border-color: rgb(var(--electric-blue-rgb) / 16%);
+}
+
+.ai-note svg,
+.ai-note strong {
+  color: var(--sky-glow);
+}
+
+.lp-wrapper {
+  color: var(--cloud);
+  background: var(--midnight);
+}
+
+.lp-wrapper h1,
+.lp-wrapper h2,
+.lp-wrapper h3,
+.lp-card-title,
+.lp-card-price {
+  color: var(--cloud);
+}
+
+.lp-header,
+.lp-header.lp-scrolled {
+  background-color: rgb(var(--midnight-rgb) / 92%);
+  backdrop-filter: blur(12px);
+}
+
+.lp-nav-link,
+.lp-header.lp-scrolled .lp-nav-link {
+  color: var(--cloud);
+}
+
+.lp-nav-link:hover,
+.lp-header.lp-scrolled .lp-nav-link:hover {
+  color: var(--sky-glow);
+}
+
+.lp-nav-link[aria-current="page"],
+.lp-header.lp-scrolled .lp-nav-link[aria-current="page"] {
+  color: var(--sky-glow);
+}
+
+.lp-hero-overlay {
+  background:
+    radial-gradient(75% 55% at 28% 30%, var(--sky-glow), var(--electric-blue) 38%, transparent 78%),
+    radial-gradient(60% 42% at 85% 92%, var(--crimson), var(--wine) 42%, transparent 78%),
+    var(--deep-navy);
+}
+
+.lp-hero .lp-btn-primary {
+  color: var(--midnight);
+  background-color: var(--cloud);
+}
+
+.lp-hero .lp-btn-primary:hover {
+  background-color: var(--cloud);
+  box-shadow: var(--blue-glow);
+}
+
+.lp-btn-primary {
+  color: var(--pure-white);
+  background-color: var(--crimson);
+}
+
+.lp-btn-primary:hover {
+  background-color: var(--dark-crimson);
+  box-shadow: var(--red-glow);
+}
+
+.lp-btn-outline {
+  color: var(--electric-blue);
+  border-color: var(--electric-blue);
+  background: transparent;
+}
+
+.lp-btn-outline:hover {
+  color: var(--electric-blue);
+  background-color: rgb(var(--electric-blue-rgb) / 10%);
+}
+
+.lp-stats,
+.lp-cta {
+  background-color: var(--surface-primary);
+}
+
+.lp-stat-item,
+.lp-property-card,
+.lp-search-panel,
+.lp-about-card,
+.lp-step-card,
+.lp-faq-item {
+  color: var(--cloud);
+  background: var(--surface-card);
+  border-color: rgb(var(--sky-glow-rgb) / 25%);
+  box-shadow: var(--card-shadow);
+}
+
+.lp-property-card:hover,
+.lp-search-panel:focus-within {
+  box-shadow: var(--blue-glow);
+}
+
+.lp-search-panel input,
+.lp-search-panel select,
+.lp-search-panel textarea {
+  color: var(--pure-white);
+  background: var(--surface-secondary);
+  border-color: rgb(var(--sky-glow-rgb) / 25%);
+}
+
+.lp-search-panel input:focus,
+.lp-search-panel select:focus,
+.lp-search-panel textarea:focus {
+  border-color: var(--electric-blue);
+  box-shadow: var(--blue-glow);
+}
+
+.lp-badge[data-status="New listing"],
+.lp-badge.new-listing {
+  color: var(--pure-white);
+  background: var(--crimson);
+}
+
+.lp-badge[data-status="Available"],
+.lp-badge.available {
+  color: var(--pure-white);
+  background: var(--electric-blue);
+}
+
+.lp-badge[data-status="Featured"],
+.lp-badge.featured {
+  color: var(--pure-white);
+  background: linear-gradient(135deg, var(--crimson), var(--electric-blue));
+}
+
+.lp-footer {
+  color: var(--cloud);
+  background: var(--midnight);
+}
+
+.lp-footer-links a {
+  color: var(--sky-glow);
+}
+
+.lp-footer-links a:hover {
+  color: var(--crimson-glow);
+}
+
+.lp-wrapper .lp-stats,
+.lp-wrapper .lp-about,
+.lp-wrapper .lp-properties,
+.lp-wrapper .lp-how,
+.lp-wrapper .lp-faq,
+.lp-wrapper .lp-cta,
+.lp-wrapper .lp-footer {
+  background-image:
+    linear-gradient(
+      135deg,
+      rgb(var(--midnight-rgb) / var(--landing-shade)),
+      rgb(var(--midnight-rgb) / var(--landing-shade))
+    ),
+    repeating-linear-gradient(
+      135deg,
+      transparent 0 8rem,
+      var(--landing-geometry) 8.05rem 8.1rem,
+      transparent 8.15rem 16rem
+    ),
+    radial-gradient(ellipse at 15% 12%, var(--landing-blue-orb), transparent 48%),
+    radial-gradient(ellipse at 85% 85%, var(--landing-red-orb), transparent 48%),
+    var(--landing-gradient);
+  background-size: auto, auto, 180% 180%, 180% 180%, 220% 220%;
+  background-position: center, center, 0% 0%, 100% 100%, 0% 50%;
+  animation: landing-gradient-drift 30s ease-in-out infinite alternate;
+}
+
+.lp-wrapper .lp-stats { --landing-shade: 72%; }
+.lp-wrapper .lp-about {
+  --landing-shade: 86%;
+  --landing-blue-orb: rgb(var(--landing-blue-rgb) / 18%);
+  --landing-red-orb: rgb(var(--landing-red-rgb) / 14%);
+}
+.lp-wrapper .lp-properties {
+  --landing-shade: 82%;
+  --landing-blue-orb: rgb(var(--landing-blue-rgb) / 20%);
+  --landing-red-orb: rgb(var(--landing-red-rgb) / 16%);
+}
+.lp-wrapper .lp-how { --landing-shade: 80%; }
+.lp-wrapper .lp-faq { --landing-shade: 82%; }
+.lp-wrapper .lp-cta { --landing-shade: 74%; }
+.lp-wrapper .lp-footer {
+  --landing-shade: 86%;
+  --landing-blue-orb: rgb(var(--landing-blue-rgb) / 15%);
+  --landing-red-orb: rgb(var(--landing-red-rgb) / 18%);
+}
+
+@keyframes landing-gradient-drift {
+  from { background-position: center, center, 0% 0%, 100% 100%, 0% 50%; }
+  to { background-position: center, center, 100% 30%, 0% 70%, 100% 50%; }
+}
+
+.lp-wrapper .lp-hero-overlay {
+  background-image:
+    linear-gradient(135deg, rgb(var(--midnight-rgb) / 48%), rgb(var(--midnight-rgb) / 62%)),
+    radial-gradient(75% 55% at 28% 30%, var(--landing-blue), var(--landing-royal-blue) 38%, transparent 78%),
+    radial-gradient(60% 42% at 85% 92%, var(--landing-red), var(--landing-soft-red) 42%, transparent 78%),
+    var(--landing-gradient);
+  background-size: auto, auto, auto, 220% 220%;
+  background-position: center, center, center, 0% 50%;
+  animation: landing-hero-drift 30s ease-in-out infinite alternate;
+}
+
+@keyframes landing-hero-drift {
+  from { background-position: center, center, center, 0% 50%; }
+  to { background-position: center, center, center, 100% 50%; }
+}
+
+.lp-wrapper .lp-search-panel,
+.lp-wrapper .lp-stat-item,
+.lp-wrapper .lp-property-card,
+.lp-wrapper .lp-about-card,
+.lp-wrapper .lp-step-card,
+.lp-wrapper .lp-faq-item {
+  background: rgb(var(--midnight-rgb) / 76%);
+  border-color: rgb(var(--cloud-rgb) / 20%);
+  box-shadow: var(--card-shadow);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.lp-wrapper .lp-section-header h2,
+.lp-wrapper .lp-centered-heading h2,
+.lp-wrapper .lp-about-copy h2,
+.lp-wrapper .lp-stat-number,
+.lp-wrapper .lp-card-title,
+.lp-wrapper .lp-card-price,
+.lp-wrapper .lp-about-card h3,
+.lp-wrapper .lp-about-list strong,
+.lp-wrapper .lp-step-card h3,
+.lp-wrapper .lp-faq-item summary,
+.lp-wrapper .lp-cta h2 {
+  color: var(--cloud);
+}
+
+.lp-wrapper .lp-stat-number {
+  color: var(--crimson-glow);
+}
+
+.lp-wrapper .lp-section-intro,
+.lp-wrapper .lp-about-copy > p:not(.lp-section-kicker),
+.lp-wrapper .lp-about-list p,
+.lp-wrapper .lp-centered-heading > p:last-child,
+.lp-wrapper .lp-faq-item p {
+  color: rgb(var(--cloud-rgb) / 90%);
+}
+
+.lp-wrapper .lp-link-arrow {
+  color: var(--sky-glow);
+}
+
+.lp-wrapper .lp-link-arrow:hover {
+  color: var(--crimson-glow);
+}
+
+.lp-wrapper .lp-footer-bottom {
+  border-top-color: rgb(var(--cloud-rgb) / 24%);
+}
+
+.lp-wrapper .lp-search-panel {
+  background-color: rgb(var(--midnight-rgb) / 84%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-wrapper .lp-stats,
+  .lp-wrapper .lp-about,
+  .lp-wrapper .lp-properties,
+  .lp-wrapper .lp-how,
+  .lp-wrapper .lp-faq,
+  .lp-wrapper .lp-cta,
+  .lp-wrapper .lp-footer,
+  .lp-wrapper .lp-hero-overlay {
+    animation: none;
+  }
+}
+
+.portal-page,
+.portal-page body {
+  color: var(--cloud);
+  background: var(--midnight);
+}
+
+.portal-shell,
+.settings-panel,
+.property-dialog {
+  color: var(--cloud);
+  background: var(--surface-primary);
+  border-color: rgb(var(--sky-glow-rgb) / 25%);
+  box-shadow: var(--card-shadow);
+}
+
+.portal-header,
+.settings-nav,
+.property-tour {
+  color: var(--cloud);
+  background: var(--surface-secondary);
+  border-color: rgb(var(--sky-glow-rgb) / 25%);
+}
+
+.property-card-lg,
+.property-dialog,
+.property-tour,
+.catalog-notice {
+  border-color: rgb(var(--sky-glow-rgb) / 25%);
+  box-shadow: var(--card-shadow);
+}
+
+.property-card-lg {
+  color: var(--cloud);
+  background: var(--surface-card);
+}
+
+.property-card-lg:hover,
+.property-tour-guide:hover {
+  box-shadow: var(--blue-glow);
+}
+
+.card-details h3,
+.listing-price,
+.property-dialog,
+.property-dialog-heading h2,
+.property-tour-heading h3 {
+  color: var(--cloud);
+}
+
+.listing-price {
+  color: var(--cloud);
+}
+
+.property-card-lg .listing-price {
+  margin-top: -8px;
+}
+
+.property-card-lg .card-details > p:not(.eyebrow) {
+  min-height: 2.8em;
+}
+
+body[data-theme="dark"] .listing-price {
+  color: var(--cloud);
+}
+
+.submit-button {
+  color: var(--pure-white);
+  background: var(--crimson);
+  border-color: var(--crimson);
+}
+
+.submit-button:hover,
+.submit-button:hover {
+  color: var(--pure-white);
+  background: var(--dark-crimson);
+  border-color: var(--dark-crimson);
+  box-shadow: var(--red-glow);
+}
+
+.action-btn:not(.secondary),
+.property-tour-guide {
+  color: var(--pure-white);
+  background: var(--electric-blue);
+  border-color: var(--electric-blue);
+}
+
+.action-btn:not(.secondary):hover,
+.property-tour-guide:hover {
+  color: var(--pure-white);
+  background: var(--blue-hover);
+  border-color: var(--blue-hover);
+  box-shadow: var(--blue-glow);
+}
+
+.action-btn.secondary,
+.property-tour-directions button {
+  color: var(--text-dark);
+  background: var(--cloud);
+  border-color: var(--cloud);
+}
+
+.action-btn.secondary:hover,
+.property-tour-directions button:hover {
+  color: var(--text-dark);
+  background: var(--pure-white);
+  border-color: var(--sky-glow);
+  box-shadow: var(--blue-glow);
+}
+
+body[data-theme="dark"] .action-btn.secondary {
+  color: var(--text-dark);
+  background: var(--cloud);
+  border-color: var(--cloud);
+}
+
+body[data-theme="dark"] .action-btn.secondary:hover {
+  color: var(--text-dark);
+  background: var(--pure-white);
+  border-color: var(--sky-glow);
+}
+
+.catalog-notice,
+.property-tour-badge {
+  color: var(--cloud);
+  background: var(--surface-secondary);
+}
+
+.property-dialog::backdrop {
+  background: rgb(var(--midnight-rgb) / 80%);
+}
+
+body.portal-page[data-theme="dark"] {
+  color: var(--cloud);
+  background: var(--midnight);
+}
+
+body.portal-page[data-theme="dark"] .portal-shell,
+body.portal-page[data-theme="dark"] .settings-panel,
+body.portal-page[data-theme="dark"] .property-dialog {
+  color: var(--cloud);
+  background: var(--surface-primary);
+  border-color: rgb(var(--sky-glow-rgb) / 25%);
+  box-shadow: var(--card-shadow);
+}
+
+body.portal-page[data-theme="dark"] .portal-header,
+body.portal-page[data-theme="dark"] .settings-nav,
+body.portal-page[data-theme="dark"] .settings-view,
+body.portal-page[data-theme="dark"] .property-tour {
+  color: var(--cloud);
+  background: var(--surface-secondary);
+}
+
+.portal-shell,
+.lp-wrapper,
+.portal-page {
+  --sh-green: var(--electric-blue);
+  --sh-green-dark: var(--dark-crimson);
+}
+
+.portal-page::before {
+  background:
+    radial-gradient(75% 55% at 28% 30%, var(--sky-glow), var(--electric-blue) 38%, transparent 78%),
+    radial-gradient(60% 42% at 85% 92%, var(--crimson), var(--wine) 42%, transparent 78%),
+    var(--deep-navy);
+}
+
+.portal-header {
+  background: rgb(var(--midnight-rgb) / 92%);
+  backdrop-filter: blur(12px);
+}
+
+.portal-actions > .portal-sign-in,
+.portal-actions .settings-toggle {
+  color: var(--pure-white);
+  background: var(--electric-blue);
+  border-color: var(--electric-blue);
+}
+
+.portal-actions > .portal-sign-in:hover,
+.portal-actions .settings-toggle:hover {
+  color: var(--pure-white);
+  background: var(--blue-hover);
+  border-color: var(--blue-hover);
+  box-shadow: var(--blue-glow);
+}
+
+.brand-header,
+.portal-heading h2,
+.portal-heading p,
+.card-details h3,
+.card-details p,
+.property-dialog-content > p,
+.property-tour-heading p,
+.property-tour-status,
+.property-dialog .property-tour-direction,
+.property-dialog .property-tour-disclaimer,
+.property-dialog .property-tour-credit,
+.settings-panel,
+.settings-view h2,
+.settings-view p,
+.settings-details dd {
+  color: var(--cloud);
+}
+
+.settings-nav-item {
+  color: var(--cloud);
+}
+
+.settings-nav-item:hover,
+.settings-nav-item.is-active {
+  color: var(--pure-white);
+  background: rgb(var(--electric-blue-rgb) / 20%);
+  box-shadow: inset 3px 0 var(--electric-blue);
+}
+
+.portal-page input,
+.portal-page select,
+.portal-page textarea,
+.settings-panel input,
+.settings-panel select,
+.settings-panel textarea {
+  color: var(--pure-white);
+  background: var(--surface-secondary);
+  border-color: rgb(var(--sky-glow-rgb) / 25%);
+}
+
+.portal-page input:focus,
+.portal-page select:focus,
+.portal-page textarea:focus {
+  border-color: var(--electric-blue);
+  box-shadow: var(--blue-glow);
+}
+
+.lp-badge,
+.lp-property-card .lp-badge {
+  color: var(--pure-white);
+  background: var(--crimson);
+}
+
+.lp-property-card [data-status="Available"],
+.property-status[data-status="Available"] {
+  background: var(--electric-blue);
+}
+
+.lp-property-card [data-status="Featured"],
+.property-status[data-status="Featured"] {
+  background: linear-gradient(135deg, var(--crimson), var(--electric-blue));
+}
+
+.app-shell {
+  color: var(--cloud);
+  background: var(--midnight);
+}
+
+.app-shell .sidebar {
+  color: var(--cloud);
+  background: var(--midnight);
+}
+
+.app-shell .side-nav a {
+  color: var(--cloud);
+}
+
+.app-shell .side-nav a:hover,
+.app-shell .side-nav a[aria-current="page"] {
+  color: var(--pure-white);
+  background: rgb(var(--electric-blue-rgb) / 20%);
+  box-shadow: inset 3px 0 var(--electric-blue);
+}
+
+.app-shell .topbar {
+  background: rgb(var(--midnight-rgb) / 92%);
+  backdrop-filter: blur(12px);
+}
+
+.app-shell .main-area {
+  color: var(--cloud);
+  background: var(--surface-primary);
+}
+
+.app-shell .summary-card,
+.app-shell .panel,
+.app-shell .notice-card,
+.app-shell .home-property-card,
+.app-shell .rent-card,
+.app-shell .rewards-panel {
+  color: var(--cloud);
+  background: var(--surface-card);
+  border-color: rgb(var(--sky-glow-rgb) / 25%);
+  box-shadow: var(--card-shadow);
+}
+
+.app-shell .rewards-task {
+  color: var(--cloud);
+  background: var(--surface-secondary);
+  border-color: rgb(var(--sky-glow-rgb) / 25%);
+}
+
+.app-shell .rewards-task.is-complete {
+  background: var(--surface-hover);
+  border-color: rgb(var(--sky-glow-rgb) / 45%);
+}
+
+.app-shell .rewards-task-copy strong {
+  color: var(--cloud);
+}
+
+.app-shell .rewards-task-copy small,
+.app-shell .rewards-task-status {
+  color: var(--cloud);
+}
+
+.app-shell .payment-insight {
+  display: block;
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  color: var(--cloud);
+  background: var(--surface-secondary);
+  border-color: rgb(var(--sky-glow-rgb) / 35%);
+  box-sizing: border-box;
+}
+
+.app-shell .payment-insight strong {
+  color: var(--sky-glow);
+}
+
+.app-shell .payment-insight p {
+  color: var(--cloud);
+  overflow-wrap: anywhere;
+}
+
+.app-shell .property-interest-row {
+  flex-wrap: wrap;
+  color: var(--cloud);
+  background: var(--surface-secondary);
+  border-color: rgb(var(--sky-glow-rgb) / 25%);
+}
+
+.app-shell .property-interest-row p {
+  color: rgb(var(--cloud-rgb) / 82%);
+  overflow-wrap: anywhere;
+}
+
+.app-shell .property-interest-status {
+  margin-left: auto;
+}
+
+.app-shell .payment-method-form {
+  color: var(--cloud);
+  background: var(--surface-secondary);
+  border-color: rgb(var(--sky-glow-rgb) / 25%);
+}
+
+.app-shell .summary-card:hover,
+.app-shell .panel:hover,
+.app-shell .home-property-card:hover {
+  box-shadow: var(--blue-glow);
+}
+
+.app-shell h1,
+.app-shell h2,
+.app-shell h3,
+.app-shell .activity-item p,
+.app-shell .summary-value,
+.app-shell .panel-heading h2,
+.app-shell .breadcrumb strong,
+.app-shell .profile-name,
+.app-shell .property-interest-row strong {
+  color: var(--cloud);
+}
+
+.app-shell .overview-card {
+  border-top-color: var(--electric-blue);
+}
+
+.app-shell .overview-payments,
+.app-shell .revenue-card,
+.app-shell .valuation-card {
+  border-top-color: var(--crimson);
+}
+
+.app-shell input,
+.app-shell select,
+.app-shell textarea {
+  color: var(--pure-white);
+  background: var(--surface-secondary);
+  border-color: rgb(var(--sky-glow-rgb) / 25%);
+}
+
+.app-shell input:focus,
+.app-shell select:focus,
+.app-shell textarea:focus {
+  border-color: var(--electric-blue);
+  box-shadow: var(--blue-glow);
+}
+
+.app-shell table thead {
+  color: var(--pure-white);
+  background: var(--surface-secondary);
+}
+
+.app-shell tbody tr:hover {
+  background: rgb(var(--electric-blue-rgb) / 8%);
+}
+
+.app-shell .request-button,
+.app-shell .submit-request {
+  color: var(--pure-white);
+  background: var(--crimson);
+  border-color: var(--crimson);
+}
+
+.app-shell .request-button:hover,
+.app-shell .submit-request:hover {
+  background: var(--dark-crimson);
+  border-color: var(--dark-crimson);
+  box-shadow: var(--red-glow);
+}
+
+.app-shell .status-pill,
+.app-shell .lease-status-badge,
+.app-shell .property-interest-status {
+  color: var(--pure-white);
+  background: var(--electric-blue);
+}
+
+.app-shell .new-listing,
+.app-shell [data-status="New listing"] {
+  color: var(--pure-white);
+  background: var(--crimson);
+}
+
+.app-shell [data-status="Available"] {
+  color: var(--pure-white);
+  background: var(--electric-blue);
+}
+
+.app-shell .featured,
+.app-shell [data-status="Featured"] {
+  color: var(--pure-white);
+  background: linear-gradient(135deg, var(--crimson), var(--electric-blue));
+}
+
+.app-shell :focus-visible {
+  outline-color: var(--sky-glow);
+}
+
+.login-shell {
+  background: transparent;
+}
+
+.login-shell .form-panel {
+  color: var(--cloud);
+  background: var(--hero-gradient);
+}
+
+.login-shell .form-heading h2,
+.login-shell .field label,
+.login-shell .remember-option,
+.login-shell .form-footer,
+.login-shell .mobile-brand {
+  color: var(--cloud);
+}
+
+.login-shell .remember-option,
+.login-shell .remember-option .remember-label {
+  color: var(--cloud);
+  font-weight: 500;
+}
+
+.login-shell .form-heading p:last-child {
+  color: rgb(var(--cloud-rgb) / 88%);
+}
+
+.login-shell .text-link {
+  color: var(--sky-glow);
+}
+
+.login-shell .text-link:hover {
+  color: var(--crimson-glow);
+}
+
+.login-shell .status-message[data-state="success"] {
+  color: var(--cloud);
+}
+
+.login-shell .ai-note strong,
+.login-shell .ai-note p {
+  color: var(--cloud);
+}
+
+.lp-search-panel input#lp-location {
+  padding-left: 0.5rem;
+  color: var(--cloud);
+}
+
+.lp-search-panel input#lp-location::placeholder {
+  color: rgb(var(--cloud-rgb) / 78%);
+}
+
+@media (max-width: 900px) {
+  .lp-nav-menu {
+    background: rgb(var(--midnight-rgb) / 92%);
+  }
+
+  .lp-nav-link,
+  .lp-header.lp-scrolled .lp-nav-link {
+    color: var(--sh-white);
+  }
+}
+
+@media (max-width: 640px) {
+  .portal-shell {
+    border-radius: 0;
+  }
+}
